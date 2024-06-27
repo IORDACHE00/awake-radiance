@@ -1,0 +1,16 @@
+{
+  "name": "awake-radiance-server",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.2.2",
+    "@supabase/supabase-js": "^2.44.0",
+    "hono": "^4.4.8",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

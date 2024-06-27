@@ -1,0 +1,25 @@
+services:
+  client:
+    container_name: client
+    image: client-image:1.0.0
+    build:
+      args:
+        VITE_APP_BASE_URL: "http://localhost:3000/api/v1"
+      context: ./client
+      dockerfile: client.dockerfile
+    ports:
+      - "4173:4173"
+    depends_on:
+      - server
+  server:
+    container_name: server
+    image: server-image:1.0.0
+    build:
+      context: ./server
+      dockerfile: server.dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      SUPABASE_URL: "https://gegxfrilmslshjlocnsp.supabase.co"
+      SUPABASE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdlZ3hmcmlsbXNsc2hqbG9jbnNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTkzNTg1NTQsImV4cCI6MjAzNDkzNDU1NH0.ldBEJsDyF-NP5LlNROXaEl2IipgV8I0Dx3WmSzjflWM"
+      JWT_SECRET: "a81652ea89601afadd11c202b789a7cdd15a6fab883289ccfde528d5fbf422fd45a3bd70fd81a80f4b22d81dc1fcdf3dd3fd36d0cd675bce65b9365706166ea9"
