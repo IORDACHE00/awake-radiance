@@ -15,7 +15,7 @@ export const supabase = createClient(supabaseUrl, supabaseKey);
 app.use(
   "/api/*",
   cors({
-    origin: "http://localhost:4173",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
