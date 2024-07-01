@@ -14,7 +14,7 @@ export default function AuthLayout() {
             <div className="bg-card border border-border rounded-xl lg:grid lg:grid-cols-2 overflow-hidden md:max-w-sm lg:max-w-full mx-auto">
               <div className="relative hidden lg:block lg:col-span-1">
                 <img
-                  src="https://images.unsplash.com/photo-1558865869-c93f6f8482af?q=80&w=2362&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://images.unsplash.com/photo-1515387784663-e2e29a23f69e?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   className="absolute object-cover inset-0 h-full w-full"
                 />
                 {/* <div className="absolute inset-0 h-full w-full bg-gradient-to-l from-background from-10% via-violet-900 to-violet-400" /> */}

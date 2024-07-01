@@ -12,6 +12,7 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
+import Landing from "@/pages/landing";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/",
+    element: <Landing />,
   },
   {
     path: "/note/view/:noteId",

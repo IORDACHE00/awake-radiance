@@ -1,12 +1,8 @@
 import { useGetAuthenticatedUser } from "@/context/authenticated-context";
 import { cn } from "@/lib/utils";
 import { NotepadText } from "lucide-react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { Separator } from "../ui/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import getLetters from "@/utils/get-letters";
-import { Button } from "../ui/button";
-import { useLogoutUser } from "@/api/queries/auth";
+import { NavLink } from "react-router-dom";
+import SidebarUserMenu from "../shared/sidebar-user-menu";
 
 const topLinks = [
   {
@@ -19,10 +15,6 @@ const topLinks = [
 
 export default function Sidebar() {
   const { username, email } = useGetAuthenticatedUser();
-
-  const navigate = useNavigate();
-
-  const { mutateAsync: logoutUser, isPending } = useLogoutUser();
 
   return (
     <aside className="fixed top-[60px] z-30 hidden h-[calc(100vh-60px)] w-full shrink-0 md:sticky md:block p-4 border-r">
@@ -50,38 +42,7 @@ export default function Sidebar() {
           ))}
         </div>
 
-        <Separator />
-
-        <div className="flex flex-col gap-2 pt-2">
-          <Button
-            variant="destructive"
-            onClick={() => {
-              logoutUser();
-
-              navigate("/login");
-            }}
-            disabled={isPending}
-          >
-            Logout
-          </Button>
-        </div>
-
-        <div className="p-4 rounded-md border w-full mt-2 flex items-center gap-2">
-          <Avatar className="bg-foreground">
-            <AvatarImage
-              src={`https://api.dicebear.com/7.x/micah/svg?seed=${email}`}
-              alt="User's profile image"
-            />
-            <AvatarFallback>{getLetters(username)}</AvatarFallback>
-          </Avatar>
-
-          <div className="flex flex-col">
-            <p className="font-semibold">{username}</p>
-            <p className="font-light text-sm text-black dark:text-foreground/70 underline">
-              {email}
-            </p>
-          </div>
-        </div>
+        <SidebarUserMenu metadata={{ email, username }} />
       </div>
     </aside>
   );

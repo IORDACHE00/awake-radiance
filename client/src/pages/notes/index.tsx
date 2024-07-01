@@ -1,4 +1,4 @@
-import SearchInput from "@/components/shared/SearchInput";
+import SearchInput from "@/components/shared/search-input";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

@@ -48,8 +48,8 @@ This will start both the frontend and backend services.
 
 ## Accessing the application
 
-- **Frontend:** The frontend application will be available at [http://localhost:3000/api/v1](http://localhost:3000/api/v1)
-- **Backend** The backend application will be available at [http://localhost:4173/login](http://localhost:4173/login)
+- **Frontend** The frontend application will be available at [http://localhost:4173](http://localhost:4173)
+- **Backend:** The backend application will be available at [http://localhost:3000/api/v1](http://localhost:3000/api/v1)
 
 ---
 
@@ -83,4 +83,4 @@ If you need to remove all images built by Docker Compose, you can use:
 docker-compose down --rmi all
 ```
 
-This will stop and remove the containers, networks, volumes, and images created by `docker-compose up`.
+This will stop and remove the containers, networks, volumes, and images created by `docker-compose up`. While this command thoroughly cleans up your project's resources, it's important to note that it may also remove unused images from other projects.
